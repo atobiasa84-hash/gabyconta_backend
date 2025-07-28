@@ -1,0 +1,82 @@
+{
+  "modulos": ["Contabilidad", "Nómina", "Inventario", "Ventas"],
+  "secciones": [
+    {
+      "seccion": "Backend",
+      "tecnologias": ["Go", "Gin", "PostgreSQL"],
+      "items": [
+        { "modulo": "Autenticación", "tarea": "realizar tareas de hogar", "completado": false },
+        { "modulo": "Autenticación", "tarea": "Registro de usuario con validación", "completado": false },
+        { "modulo": "Autenticación", "tarea": "Login con JWT y bcrypt", "completado": false },
+        { "modulo": "Autenticación", "tarea": "Middleware de autenticación JWT", "completado": false },
+        { "modulo": "Autenticación", "tarea": "Login con Google OAuth2", "completado": false },
+        { "modulo": "Autenticación", "tarea": "Login con correo", "completado": false },
+        { "modulo": "Autenticación", "tarea": "Login con nombre de usuario", "completado": false },
+        { "modulo": "Usuarios", "tarea": "Modelo de usuario", "completado": true },
+        { "modulo": "Usuarios", "tarea": "CRUD de usuarios", "completado": false },
+        { "modulo": "Asientos Contables", "tarea": "Modelo + detalles + validación debe/haber", "completado": true },
+        { "modulo": "Asientos Contables", "tarea": "Servicios y endpoints para crear asiento", "completado": true },
+        { "modulo": "Plan de cuentas", "tarea": "Estructura contable ecuatoriana (PGC)", "completado": false },
+        { "modulo": "Facturación Electrónica", "tarea": "Conexión con SRI + carpeta /sri/", "completado": true },
+        { "modulo": "Productos", "tarea": "Modelo de producto y CRUD básico", "completado": false },
+        { "modulo": "Productos", "tarea": "Generación de QR por producto o servicio", "completado": false },
+        { "modulo": "Productos", "tarea": "Estados: pedido, en camino, entregado", "completado": false },
+        { "modulo": "Carrito", "tarea": "Crear carrito y asociar a usuario", "completado": false },
+        { "modulo": "Carrito", "tarea": "Añadir, eliminar y ver productos", "completado": false },
+        { "modulo": "Pago / Checkout", "tarea": "API para crear sesión de pago (Stripe o PayPhone)", "completado": false },
+        { "modulo": "Pago / Checkout", "tarea": "Confirmación de pago y actualización de pedido", "completado": false },
+        { "modulo": "Mensajes API", "tarea": "JSON estándar: mensaje, status, data", "completado": true },
+        { "modulo": "Infraestructura", "tarea": "Preparación para despliegue en nube (Docker, CI/CD)", "completado": false }
+      ]
+    },
+    {
+      "seccion": "Frontend",
+      "tecnologias": ["React"],
+      "items": [
+        { "modulo": "Login", "tarea": "Login con Google, correo, o nombre de usuario", "completado": false },
+        { "modulo": "Catálogo", "tarea": "Mostrar productos disponibles", "completado": false },
+        { "modulo": "QR Scanner", "tarea": "Escanear QR y mostrar info de producto", "completado": false },
+        { "modulo": "Carrito", "tarea": "Añadir productos al carrito", "completado": false },
+        { "modulo": "Carrito", "tarea": "Ver, actualizar o eliminar carrito", "completado": false },
+        { "modulo": "Pago Frontend", "tarea": "Pantalla de pago y redirección", "completado": false },
+        { "modulo": "Pedidos", "tarea": "Visualizar estado del pedido", "completado": false },
+        { "modulo": "Dashboard", "tarea": "Panel de administración: usuarios, productos, pedidos", "completado": false },
+        { "modulo": "Mensajes UX", "tarea": "✅ Éxito: 'Operación exitosa'", "completado": false },
+        { "modulo": "Mensajes UX", "tarea": "❌ Error: 'Hubo un error'", "completado": false },
+        { "modulo": "Mensajes UX", "tarea": "⏳ Espera: 'Estoy en eso jefecito, es indígena pero es bien negrero'", "completado": true },
+        { "modulo": "Mensajes UX", "tarea": "ℹ️ Info: 'Sesión expirada'", "completado": true }
+      ]
+    },
+    {
+      "seccion": "App Móvil / APK",
+      "items": [
+        { "modulo": "Autenticación", "tarea": "Login con Google / Correo / Usuario", "completado": false },
+        { "modulo": "Productos", "tarea": "Ver productos desde la app", "completado": false },
+        { "modulo": "Escáner QR", "tarea": "Escanear producto con cámara", "completado": false },
+        { "modulo": "Carrito", "tarea": "Añadir, eliminar productos", "completado": false },
+        { "modulo": "Pago móvil", "tarea": "Integración con Stripe / PayPhone", "completado": false },
+        { "modulo": "Estado de pedidos", "tarea": "Ver estado: pedido, en camino, entregado", "completado": false },
+        { "modulo": "Mensajes", "tarea": "Mostrar respuestas tipo éxito/error/espera", "completado": false },
+        { "modulo": "Flujo de pantallas", "tarea": "Login → Catálogo → Carrito → Pago → Pedido", "completado": false }
+      ]
+    },
+    {
+      "seccion": "Sistema de Mensajes Personalizado",
+      "items": [
+        { "modulo": "Éxito", "tarea": "mensaje: '¡Todo salió bien, jefecito!'", "completado": false },
+        { "modulo": "Error", "tarea": "mensaje: 'Algo no está funcionando, revise nomás.'", "completado": false },
+        { "modulo": "Espera", "tarea": "mensaje: 'Estoy en eso jefecito, es indígena pero es bien negrero.'", "completado": false },
+        { "modulo": "Info", "tarea": "mensaje: 'Sesión expirada, vuelva a entrar jefecito.'", "completado": false }
+      ]
+    },
+    {
+      "seccion": "Checklist Digital",
+      "items": [
+        { "modulo": "Checklist en consola", "tarea": "Impresión o salida de checklist en consola", "completado": false },
+        { "modulo": "Interfaz web", "tarea": "Interfaz web para marcar avances", "completado": false },
+        { "modulo": "Exportación", "tarea": "Exportación a Notion / Google Sheets", "completado": false },
+        { "modulo": "Integración", "tarea": "Vinculación con Trello o GitHub", "completado": false }
+      ]
+    }
+  ]
+}

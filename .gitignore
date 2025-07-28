@@ -1,0 +1,18 @@
+# Archivos binarios
+/bin/
+/build/
+
+# Archivos de configuración local
+*.env
+*.log
+
+# Dependencias
+/vendor/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+
+
+
