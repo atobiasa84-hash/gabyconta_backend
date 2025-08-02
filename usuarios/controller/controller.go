@@ -44,12 +44,40 @@ func (uc *UsuarioController) Login(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"mensaje": "Autenticación exitosa",
-		"usuario": gin.H{
-			"id":     usuario.ID,
-			"nombre": usuario.Nombre,
-			"email":  usuario.Email,
-		},
-	})
+	if err := uc.Service.CargarEmpresas(usuario); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al cargar empresas: " + err.Error()})
+		return
+	}
+
+	if len(usuario.Empresas) == 1 {
+		empresaID := usuario.Empresas[0].ID
+		token, err := uc.Service.GenerarToken(usuario.ID, empresaID)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al generar token: " + err.Error()})
+			return
+		}
+
+		c.JSON(http.StatusOK, gin.H{
+			"mensaje":   "Autenticación exitosa",
+			"autoLogin": true,
+			"token":     token,
+			"empresa":   usuario.Empresas[0],
+			"usuario": gin.H{
+				"id":     usuario.ID,
+				"nombre": usuario.Nombre,
+				"email":  usuario.Email,
+			},
+		})
+	} else {
+		c.JSON(http.StatusOK, gin.H{
+			"mensaje":   "Seleccione empresa",
+			"autoLogin": false,
+			"empresas":  usuario.Empresas,
+			"usuario": gin.H{
+				"id":     usuario.ID,
+				"nombre": usuario.Nombre,
+				"email":  usuario.Email,
+			},
+		})
+	}
 }
